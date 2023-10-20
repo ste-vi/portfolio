@@ -1,6 +1,6 @@
 <script>
 
-  import Leftnav from "./Leftnav.svelte";
+  import Leftnav from './Leftnav.svelte';
 
   let screenWidth = 0;
   let screenHeight = 0;
@@ -539,7 +539,7 @@
     .right-content {
         display: flex;
         flex-direction: column;
-        padding: 0rem 4rem;
+        padding: 0 4rem;
         justify-content: center;
     }
 

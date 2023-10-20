@@ -18,7 +18,7 @@
 <style>
     .nav {
         height: 100vh;
-        width: 20%;
+        width: 16%;
         display: flex;
         flex-direction: column;
         justify-content: center;
