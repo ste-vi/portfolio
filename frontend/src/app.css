@@ -1,0 +1,13 @@
+html {
+    scroll-behavior: smooth;
+    color: #ffffff;
+}
+
+* {
+    font-family: 'Imprima', sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
