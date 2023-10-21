@@ -1,11 +1,9 @@
 <script>
 
-  import Leftnav from "./Leftnav.svelte";
 </script>
 
-<section class="container">
+<section class="container" id="contact">
   <div class="content">
-    <Leftnav />
     <div class="contact">
 
     </div>

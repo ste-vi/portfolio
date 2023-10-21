@@ -1,12 +1,16 @@
 <script>
 
   import Leftnav from "./Leftnav.svelte";
+
+  import { nav } from "$lib/stores/NavStore.ts";
+
+  nav.set({currentPage: "about", nextAnchor: "work" })
 </script>
 
-<section class="container">
+<section class="container" id="about">
   <div class="content">
     <Leftnav />
-    <div class="experience">
+    <div class="experience" >
 
     </div>
   </div>

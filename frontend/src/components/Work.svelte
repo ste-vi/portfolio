@@ -1,9 +1,11 @@
 <script>
 
   import Leftnav from "./Leftnav.svelte";
-</script>
+  import { nav } from "$lib/stores/NavStore.ts";
+  nav.set({currentPage: "work", nextAnchor: "contact" })
+  </script>
 
-<section class="container">
+<section class="container" id="work">
   <div class="content">
     <Leftnav />
     <div class="work">

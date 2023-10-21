@@ -1,5 +1,28 @@
 <script>
-  let currentPage = 'home';
+  import { nav } from "$lib/stores/NavStore.ts";
+
+
+  let currentPage = "";
+  let nextAnchor = "";
+
+  nav.subscribe(value => {
+    currentPage = value.currentPage;
+    nextAnchor = value.nextAnchor;
+  });
+
+  export function handleAnchorClick(event) {
+    event.preventDefault();
+
+    const link = event.currentTarget;
+    const anchorId = new URL(link.href).hash.replace("#", "");
+    const anchor = document.getElementById(anchorId);
+
+    window.scrollTo({
+      top: anchor.offsetTop,
+      behavior: "smooth"
+    });
+  }
+
 </script>
 
 <section class="nav">
@@ -7,11 +30,14 @@
     {currentPage}
   </div>
   <div class="arrow">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 30" fill="none">
-      <path
-        d="M10.9393 29.0607C11.5251 29.6464 12.4749 29.6464 13.0607 29.0607L22.6066 19.5147C23.1924 18.9289 23.1924 17.9792 22.6066 17.3934C22.0208 16.8076 21.0711 16.8076 20.4853 17.3934L12 25.8787L3.51472 17.3934C2.92893 16.8076 1.97919 16.8076 1.3934 17.3934C0.807612 17.9792 0.807612 18.9289 1.3934 19.5147L10.9393 29.0607ZM10.5 2.90615e-09L10.5 28L13.5 28L13.5 -2.90615e-09L10.5 2.90615e-09Z"
-        fill="#FFFDFD" />
-    </svg>
+    <a href="#{nextAnchor}" on:click={handleAnchorClick}>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 30" fill="none">
+        <path
+          d="M10.9393 29.0607C11.5251 29.6464 12.4749 29.6464 13.0607 29.0607L22.6066 19.5147C23.1924 18.9289 23.1924 17.9792 22.6066 17.3934C22.0208 16.8076 21.0711 16.8076 20.4853 17.3934L12 25.8787L3.51472 17.3934C2.92893 16.8076 1.97919 16.8076 1.3934 17.3934C0.807612 17.9792 0.807612 18.9289 1.3934 19.5147L10.9393 29.0607ZM10.5 2.90615e-09L10.5 28L13.5 28L13.5 -2.90615e-09L10.5 2.90615e-09Z"
+          fill="#FFFDFD" />
+      </svg>
+    </a>
+
   </div>
 </section>
 
@@ -40,5 +66,7 @@
 
     .arrow {
         margin-bottom: 4vh;
+        color: #4a4aff;
+        font-weight: bold;
     }
 </style>
