@@ -71,20 +71,23 @@
     event.preventDefault();
 
     const link = event.currentTarget;
-    const anchorId = new URL(link.href).hash.replace("#", "");
+    const hash = new URL(link.href).hash;
+    const anchorId = hash.replace("#", "");
     const anchor = document.getElementById(anchorId);
 
     window.scrollTo({
       top: anchor.offsetTop,
       behavior: "smooth"
     });
+
+    window.location.href = "/" + hash;
   }
 
 </script>
 
 <section class="container" id="home">
   <div class="left">
-    <Leftnav />
+    <!--    <Leftnav />-->
 
     <div class="profile">
       <div class="image">
@@ -592,7 +595,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding-right: 4vh;
+        /*padding-right: 4vh;*/
         margin-bottom: 10vh;
     }
 
@@ -717,6 +720,107 @@
 
     a:active {
         text-decoration: none;
+    }
+
+    @media only screen and (max-width: 600px) and (max-height: 670px) {
+
+        .profile {
+            margin-bottom: 0;
+        }
+
+        .star2 {
+            padding-top: 1.3vh;
+        }
+
+        .rocket {
+            display: none;
+        }
+
+        .name {
+            margin-top: 1rem;
+            font-size: 1.4rem;
+        }
+    }
+
+    @media only screen and (max-width: 915px) and (max-height: 414px) {
+
+        .content {
+            font-size: 1.5rem;
+        }
+
+        .profile {
+            margin-bottom: 0;
+        }
+
+        .rocket {
+            display: none;
+        }
+
+        .name {
+            margin-top: 1rem;
+            font-size: 1.4rem;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+
+        .container {
+            flex-direction: column;
+        }
+
+        .left {
+            display: none;
+            height: 40vh;
+            width: 100%;
+        }
+
+        .profile {
+            height: 40vh;
+            padding-right: 0;
+            margin-bottom: 0;
+        }
+
+        .right {
+            width: 100%;
+        }
+
+        .content {
+            margin-top: 10vh;
+            gap: 6vh;
+        }
+
+        .right-content {
+            padding: 0 2.5rem;
+        }
+
+        .footer {
+            margin-top: 10vh;
+        }
+
+        .star4 {
+            display: none;
+        }
+
+        .star5 {
+            display: none;
+        }
+    }
+
+    @media only screen and (min-width: 600px) and (max-width: 850px) and (max-height: 450px) {
+
+        .content {
+            margin-top: 12vh;
+        }
+
+        .footer {
+            display: none;
+        }
+    }
+
+    @media only screen and (min-width: 760px) and (max-width: 820px) and (max-height: 1200px) {
+        .rocket {
+            display: none;
+        }
     }
 
 
