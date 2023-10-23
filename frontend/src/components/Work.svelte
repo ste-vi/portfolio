@@ -1,34 +1,63 @@
 <script>
   let projects = [
     {
-      "name": "Ecommerce",
+      "name": "Project One",
       "stack": ["Java 17", "Spring", "PostgreSQL", "Kubernetes"],
       "description": "Desc",
-      "responsibilities": "Desc"
+      "responsibilities": "Worked closely with the development team under the Agile (Scrum) methodology\n" +
+        "to deliver high-quality software.\n" +
+        "Implemented new business requirements by developing new modules from\n" +
+        "scratch based on the Spring framework.\n" +
+        "Participated in support activities, investigated and resolved issues, and\n" +
+        "implemented new technical solutions"
     },
     {
-      "name": "Digital supply chain",
+      "name": "Project Two",
       "stack": ["Java 17", "Spring", "PostgreSQL", "Kubernetes", "GraphQL", "Docker", "Microservices", "AWS"],
-      "description": "Desc",
-      "responsibilities": "Desc"
+      "description": "The application is a big platform that helps large and middle-size companies/factories control the quality of products their produce and manage relationships between suppliers and consumers.",
+      "responsibilities": "Worked closely with the development team under the Agile (Scrum) methodology\n" +
+        "to deliver high-quality software.\n" +
+        "Implemented new business requirements by developing new modules from\n" +
+        "scratch based on the Spring framework.\n" +
+        "Participated in support activities, investigated and resolved issues, and\n" +
+        "implemented new technical solutions"
     },
     {
-      "name": "Digital supply chain",
+      "name": "Project Three",
       "stack": ["Java 17", "Spring", "PostgreSQL", "Kubernetes", "GraphQL", "Docker", "Microservices", "AWS"],
-      "description": "Desc",
-      "responsibilities": "Desc"
+      "description": "The application is a big platform that helps large and middle-size companies/factories control the quality of products their produce and manage relationships between suppliers and consumers.",
+      "responsibilities": "- Worked closely with the development team under the Agile (Scrum) methodology\n" +
+        "to deliver high-quality software.\n" +
+        "- Implemented new business requirements by developing new modules from\n" +
+        "scratch based on the Spring framework.\n" +
+        "- Participated in support activities, investigated and resolved issues, and" +
+        "implemented new technical solutions\n" +
+        "- Maintained the server to ensure the stability and security of the application.\n" +
+        "- Took part in continuous releases of projects on time, meeting client expectations.\n" +
+        "- Refactored source code which helped in a project's development speed and\n" +
+        "efficiency"
     },
     {
-      "name": "Digital supply chain",
+      "name": "Project Four",
       "stack": ["Java 17", "Spring", "PostgreSQL", "Kubernetes", "GraphQL", "Docker", "Microservices", "AWS"],
-      "description": "Desc",
-      "responsibilities": "Desc"
+      "description": "The application is a big platform that helps large and middle-size companies/factories control the quality of products their produce and manage relationships between suppliers and consumers.",
+      "responsibilities": "Worked closely with the development team under the Agile (Scrum) methodology\n" +
+        "to deliver high-quality software.\n" +
+        "Implemented new business requirements by developing new modules from\n" +
+        "scratch based on the Spring framework.\n" +
+        "Participated in support activities, investigated and resolved issues, and\n" +
+        "implemented new technical solutions"
     },
     {
-      "name": "Digital supply chain",
+      "name": "Project Five",
       "stack": ["Java 17", "Spring", "PostgreSQL", "Kubernetes", "GraphQL", "Docker", "Microservices", "AWS"],
-      "description": "Desc",
-      "responsibilities": "Desc"
+      "description": "The application is a big platform that helps large and middle-size companies/factories control the quality of products their produce and manage relationships between suppliers and consumers.",
+      "responsibilities": "- Worked closely with the development team under the Agile (Scrum) methodology\n" +
+        "to deliver high-quality software.\n" +
+        "Implemented new business requirements by developing new modules from\n" +
+        "scratch based on the Spring framework.\n" +
+        "Participated in support activities, investigated and resolved issues, and\n" +
+        "implemented new technical solutions"
     }
   ];
 
@@ -68,11 +97,12 @@
       <div class="cards">
         {#each projects as project}
           <div class="card" style="transform: translateX({scrollPosition}px" bind:clientWidth={cardWidth}>
-            <div class="name">
-              {project.name}
-            </div>
+
             <div class="image">
               <img src="/test.png" alt="image" />
+            </div>
+            <div class="name">
+              {project.name}
             </div>
             <div class="stack">
               {#each project.stack as item}
@@ -82,10 +112,16 @@
               {/each}
             </div>
             <div class="description">
-              {project.description}
+              <b>Description:</b><br>
+              <p>
+                {project.description}
+              </p>
             </div>
             <div class="responsibilities">
-              {project.responsibilities}
+              <b>Responsibilities:</b><br>
+              <p>
+                {project.responsibilities}
+              </p>
             </div>
           </div>
         {/each}
@@ -146,7 +182,7 @@
         display: flex;
         flex-direction: row;
         margin-top: 4rem;
-        gap: 3rem;
+        gap: 1rem;
         width: 80%;
         justify-content: center;
 
@@ -164,8 +200,9 @@
     }
 
     .card {
-        background-color: #1d1559;
-        height: 64vh;
+        background-color: transparent;
+        height: fit-content;
+        min-height: 65vh;
         max-width: 500px;
         min-width: 400px;
         width: 38%;
@@ -178,14 +215,19 @@
         transition: transform 0.3s ease-in-out;
     }
 
+    .card:hover {
+        background-color: rgba(62, 35, 224, 0.2);
+    }
+
     .name {
         font-weight: bold;
         font-size: 1.4rem;
+        margin-bottom: 1rem;
+        margin-top: 0.6rem;
     }
 
     .image {
         padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
         width: 100%;
     }
 
@@ -213,6 +255,18 @@
         padding: 0.4rem 0.8rem;
         margin-bottom: 3px;
         background-color: #422cc7;
+    }
+
+    .description {
+        padding-top: 1rem;
+        padding-bottom: 0.1rem;
+        font-size: 0.74rem;
+        white-space: pre-line;
+    }
+
+    .responsibilities {
+        white-space: pre-line;
+        font-size: 0.74rem;
     }
 
     svg {
