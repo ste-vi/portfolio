@@ -1,13 +1,10 @@
 <script>
 
-  import Leftnav from "./Leftnav.svelte";
-  import { nav } from "$lib/stores/NavStore.ts";
-  nav.set({currentPage: "work", nextAnchor: "contact" })
-  </script>
+</script>
 
 <section class="container" id="work">
   <div class="content">
-    <Leftnav />
+
     <div class="work">
 
     </div>
@@ -25,8 +22,9 @@
     }
 
     .content {
-        background: rgb(20,16,65);
-        background: linear-gradient(0deg, rgba(20,16,65,1) 9%, rgba(3,2,9,1) 100%);        background-blend-mode: saturation;
+        background: rgb(20, 16, 65);
+        background: linear-gradient(0deg, rgba(20, 16, 65, 1) 9%, rgba(3, 2, 9, 1) 100%);
+        background-blend-mode: saturation;
         mix-blend-mode: darken;
         justify-content: center;
         align-items: center;
@@ -37,6 +35,6 @@
     }
 
     .work {
-      flex: 1;
+        flex: 1;
     }
 </style>
