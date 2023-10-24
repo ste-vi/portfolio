@@ -47,17 +47,6 @@
         "scratch based on the Spring framework.\n" +
         "Participated in support activities, investigated and resolved issues, and\n" +
         "implemented new technical solutions"
-    },
-    {
-      "name": "Project Five",
-      "stack": ["Java 17", "Spring", "PostgreSQL", "Kubernetes", "GraphQL", "Docker", "Microservices", "AWS"],
-      "description": "The application is a big platform that helps large and middle-size companies/factories control the quality of products their produce and manage relationships between suppliers and consumers.",
-      "responsibilities": "- Worked closely with the development team under the Agile (Scrum) methodology\n" +
-        "to deliver high-quality software.\n" +
-        "Implemented new business requirements by developing new modules from\n" +
-        "scratch based on the Spring framework.\n" +
-        "Participated in support activities, investigated and resolved issues, and\n" +
-        "implemented new technical solutions"
     }
   ];
 
@@ -67,14 +56,34 @@
   let numberOfCards = projects.length;
   let currentCard = 0;
 
+  let currentIndex = 0;
+
+  currentIndex = Math.floor(numberOfCards / 2);
+  console.log(currentIndex);
+
+
   function scrollLeft() {
-    currentCard = (currentCard - 1 + numberOfCards) % numberOfCards;
-    scrollPosition = currentCard * cardWidth;
+    currentIndex--;
+    console.log(currentIndex);
+
+
+    if (currentIndex > 0) {
+      scrollPosition = scrollPosition + cardWidth;
+    } else {
+      currentIndex = numberOfCards - 1;
+      scrollPosition = 0 - (cardWidth * currentIndex);
+    }
+
   }
 
   function scrollRight() {
-    currentCard = (currentCard + 1) % numberOfCards;
-    scrollPosition = -(currentCard * cardWidth);
+    currentIndex++;
+    if (currentIndex == currentIndex % numberOfCards) {
+
+    }
+    console.log(currentIndex);
+
+    //currentIndex = (currentIndex + 1) % numberOfCards;
   }
 </script>
 
@@ -95,8 +104,9 @@
       </div>
 
       <div class="cards">
-        {#each projects as project}
-          <div class="card" style="transform: translateX({scrollPosition}px" bind:clientWidth={cardWidth}>
+        {#each projects as project, index (index)}
+          <div class="card" style="transform: translateX({scrollPosition}px);" bind:clientWidth={cardWidth}>
+            {index}
 
             <div class="image">
               <img src="/test.png" alt="image" />
@@ -164,7 +174,7 @@
     .title {
         font-size: 1.6rem;
         text-align: center;
-        padding-top: 4rem;
+        padding-top: 3rem;
     }
 
     .cards-content {
@@ -172,6 +182,7 @@
         flex-direction: row;
         width: 100%;
         justify-content: center;
+        margin-top: 2rem;
         margin-left: 2rem;
         margin-right: 2rem;
         align-items: center;
@@ -181,9 +192,9 @@
     .cards {
         display: flex;
         flex-direction: row;
-        margin-top: 4rem;
         gap: 1rem;
         width: 80%;
+
         justify-content: center;
 
         overflow-x: auto;
@@ -196,7 +207,6 @@
         &::-webkit-scrollbar {
             display: none;
         }
-
     }
 
     .card {
@@ -205,14 +215,13 @@
         min-height: 65vh;
         max-width: 500px;
         min-width: 400px;
-        width: 38%;
+
         border-radius: 7px;
         padding: 1.2rem;
         flex: 0 0 auto;
         cursor: pointer;
         display: inline-block;
-
-        transition: transform 0.3s ease-in-out;
+        transition: transform 0.5s ease-in-out;
     }
 
     .card:hover {
@@ -276,6 +285,32 @@
     path:hover {
         fill: #364be8 !important;
         cursor: pointer;
+    }
+
+    @media only screen and (max-width: 600px) and (max-height: 670px) {
+
+    }
+
+    @media only screen and (max-width: 915px) and (max-height: 414px) {
+
+
+    }
+
+    @media only screen and (max-width: 600px) {
+        .cards {
+            max-width: 0;
+            min-width: 300px;
+            width: 80%;
+        }
+
+    }
+
+    @media only screen and (min-width: 600px) and (max-width: 850px) and (max-height: 450px) {
+
+    }
+
+    @media only screen and (min-width: 760px) and (max-width: 820px) and (max-height: 1200px) {
+
     }
 
 </style>

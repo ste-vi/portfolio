@@ -175,13 +175,13 @@
 
     .experience {
         opacity: 0;
-        animation: appear 3s ease-in forwards;
+        animation: appear 2s ease-in forwards;
     }
 
     .qualification {
         width: 100%;
         opacity: 0;
-        animation: appear 3.3s ease-in forwards;
+        animation: appear 2.3s ease-in forwards;
     }
 
     .qualification-body {
@@ -232,7 +232,7 @@
     .skills {
         width: 100%;
         opacity: 0;
-        animation: appear 3.5s ease-in forwards;
+        animation: appear 2.5s ease-in forwards;
     }
 
     .skills-body {
