@@ -7,41 +7,38 @@
   const linkedInDomain = "https://www.linkedin.com/in";
   const linkedInUrl = linkedInDomain + "/vitalii-stefanchak";
 
-  function openLinkedIn() {
-    window.open(linkedInUrl, "_blank");
-  }
-
-  function openGitHub() {
-    window.open(gitHubUrl, "_blank");
-  }
 </script>
 
 <section class="container" id="contact">
   <div class="content">
     <div class="links">
-      <div class="social" on:click="{openLinkedIn()}">
+      <div class="social">
         <div class="icon">
-          <i class="fa-brands fa-linkedin-in fa-beat fa-xl"></i>
+          <a href="{gitHubUrl}" target="_blank">
+            <i class="fa-brands fa-linkedin-in fa-beat fa-xl"></i>
+          </a>
         </div>
         <div class="social-info">
           <div class="name">
             Vitalii Stefanchak
           </div>
           <div class="url">
-            <a href="{linkedInUrl}" target="_blank">{linkedInDomain}</a>
+            <a class="blue-text" href="{linkedInUrl}" target="_blank">{linkedInDomain}</a>
           </div>
         </div>
       </div>
-      <div class="social" on:click="{openGitHub()}">
+      <div class="social">
         <div class="icon">
-          <i class="fa-brands fa-github fa-beat fa-xl"></i>
+          <a href="{gitHubUrl}" target="_blank">
+            <i class="fa-brands fa-github fa-beat fa-xl"></i>
+          </a>
         </div>
         <div class="social-info">
           <div class="name">
             Ste Vi
           </div>
           <div class="url">
-            <a href="{gitHubUrl}" target="_blank">{gutHubDomain}</a>
+            <a class="blue-text" href="{gitHubUrl}" target="_blank">{gutHubDomain}</a>
           </div>
         </div>
       </div>
@@ -177,7 +174,6 @@
         border-radius: 1.2rem;
         margin-bottom: 2rem;
         gap: 1rem;
-        cursor: pointer;
     }
 
     .social:hover {
@@ -204,6 +200,11 @@
     }
 
     a {
+        color: white;
+        cursor: pointer;
+    }
+
+    .blue-text {
         color: #628EFF;
     }
 
