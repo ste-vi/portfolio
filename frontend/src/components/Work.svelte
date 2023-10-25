@@ -1,30 +1,27 @@
 <script>
   let projects = [
     {
-      "name": "Project Two",
-      "stack": ["Java 17", "Spring", "PostgreSQL", "Kubernetes", "GraphQL", "Docker", "Microservices", "AWS"],
+      "name": "Physical supply chain (France)",
+      "imageSrc": "/project1.jpg",
+      "stack": ["Java 17", "Spring", "PostgreSQL", "Hibernate", "Docker", "Kubernetes", "GCP", "Redis", "Elastic Search", "Hibernate", "Junit", "Mockito"],
       "description": "The application is a big platform that helps large and middle-size companies/factories control the quality of products their produce and manage relationships between suppliers and consumers.",
-      "responsibilities": "- Worked closely with the development team under the Agile (Scrum) methodology\n" +
-        "to deliver high-quality software.\n" +
-        "- Implemented new business requirements by developing new modules from\n" +
-        "scratch based on the Spring framework.\n" +
-        "- Participated in support activities, investigated and resolved issues, and\n" +
-        "implemented new technical solutions"
+      "responsibilities": "- Worked closely with the large development team under the Agile (Scrum) methodology to deliver high-quality software.\n" +
+        "- Participated in support activities, investigated and resolved different king of issues.\n" +
+        "- Analyzed and implemented new technical solutions.\n" +
+        "- Wrote clean and fully covered unit and integration tests to ensure the quality of the software.\n" +
+        "- Conducted code reviews and provided constructive feedback to team members."
     },
     {
-      "name": "Project Three",
-      "stack": ["Java 17", "Spring", "PostgreSQL", "Kubernetes", "GraphQL", "Docker", "Microservices", "AWS"],
-      "description": "The application is a big platform that helps large and middle-size companies/factories control the quality of products their produce and manage relationships between suppliers and consumers.",
-      "responsibilities": "- Worked closely with the development team under the Agile (Scrum) methodology\n" +
-        "to deliver high-quality software.\n" +
-        "- Implemented new business requirements by developing new modules from\n" +
-        "scratch based on the Spring framework.\n" +
-        "- Participated in support activities, investigated and resolved issues, and" +
-        "implemented new technical solutions\n" +
-        "- Maintained the server to ensure the stability and security of the application.\n" +
+      "name": "Digital supply chain (USA)",
+      "imageSrc": "/project2.jpg",
+      "stack": ["Java 17", "Spring", "PostgreSQL", "GraphQL", "Kubernetes", "Docker", "Microservices", "AWS", "GitHub Actions", "Junit", "Mockito"],
+      "description": "The system is a bundle of microservices that help to distribute and manage digital media assets (video, audio, images) of one of the biggest music labels in the world.",
+      "responsibilities": "- Took part in rewriting legacy system into the microservices architecture.\n" +
+        "- Implemented business requirements by developing new modules.\n" +
         "- Took part in continuous releases of projects on time, meeting client expectations.\n" +
-        "- Refactored source code which helped in a project's development speed and\n" +
-        "efficiency"
+        "- Implemented new business requirements by developing new modules.\n" +
+        "- Optimized the performance of an application by reducing database hits, adding cache, and constantly monitoring execution time during development.\n" +
+        "- Refactored source code which helped in a project's development speed and efficiency.\n"
     }
   ];
 
@@ -40,7 +37,7 @@
       {#each projects as project}
         <div class="card">
           <div class="image">
-            <img src="/test.png" alt="image" />
+            <img src="{project.imageSrc}" alt="music" />
           </div>
           <div class="name">
             {project.name}
@@ -109,7 +106,6 @@
         margin-right: 2rem;
 
         overflow-x: auto;
-        flex-wrap: nowrap;
 
         -webkit-overflow-scrolling: touch;
         scroll-behavior: smooth;
@@ -125,9 +121,8 @@
         min-width: 400px;
         border-radius: 7px;
         padding: 1.2rem;
-        flex: 1 0 auto;
+        flex: 0 0 auto;
         cursor: pointer;
-        transition: transform 0.5s ease-in-out;
     }
 
     .card:hover {
@@ -148,7 +143,7 @@
 
     img {
         border-radius: 7px;
-        filter: grayscale(80%) brightness(100%);
+        filter: grayscale(10%) brightness(100%);
         opacity: 0.9;
         width: 100%;
         height: 30vh;
@@ -182,31 +177,75 @@
     .responsibilities {
         white-space: pre-line;
         font-size: 0.84rem;
+        line-height: 1.3;
     }
 
-    @media only screen and (max-width: 600px) and (max-height: 670px) {
-
-    }
-
-    @media only screen and (max-width: 915px) and (max-height: 414px) {
-
-
-    }
-
-    @media only screen and (max-width: 600px) {
+    @media only screen and (min-width: 700px) and (max-width: 1220px) {
         .cards {
-            max-width: 0;
-            min-width: 300px;
-            width: 80%;
+            justify-content: flex-start;
+            width: 90%;
+        }
+    }
+
+    @media only screen and (min-width: 800px) and (max-width: 1280px) and (min-height: 600px) and (max-height: 900px) {
+        .cards {
+            margin-top: 1rem;
+        }
+        .title {
+            padding-top: 1rem;
+        }
+    }
+
+    @media only screen and (max-width: 700px) {
+        .cards {
+            margin-top: 0.5rem;
+            padding-bottom: 1rem;
+            justify-content: flex-start;
+            width: 98%;
+            font-size: 0.1rem;
+            gap: 0;
+
         }
 
-    }
+        .title {
+        }
 
-    @media only screen and (min-width: 600px) and (max-width: 850px) and (max-height: 450px) {
+        .name {
+            font-size: 1rem;
+            margin-top: 0.6rem;
+        }
 
-    }
+        img {
+            height: 26vh;
+        }
 
-    @media only screen and (min-width: 760px) and (max-width: 820px) and (max-height: 1200px) {
+        .card {
+            min-height: fit-content;
+            padding-right: 1rem;
+            max-width: 90%;
+            min-width: 90%;
+        }
+
+        .stack-item {
+            font-size: 0.71rem;
+            border-radius: 30px;
+            padding: 0.4rem 0.8rem;
+            margin-bottom: 3px;
+            background-color: #422cc7;
+        }
+
+        .description {
+            padding-top: 1rem;
+            padding-bottom: 0.1rem;
+            font-size: 0.71rem;
+            white-space: pre-line;
+        }
+
+        .responsibilities {
+            white-space: pre-line;
+            font-size: 0.71rem;
+            line-height: 1.3;
+        }
 
     }
 

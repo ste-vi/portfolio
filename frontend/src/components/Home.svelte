@@ -758,7 +758,7 @@
         }
     }
 
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 680px) {
 
         .container {
             flex-direction: column;
@@ -814,6 +814,12 @@
     }
 
     @media only screen and (min-width: 760px) and (max-width: 820px) and (max-height: 1200px) {
+        .rocket {
+            display: none;
+        }
+    }
+
+    @media only screen and (max-width: 1100px) {
         .rocket {
             display: none;
         }

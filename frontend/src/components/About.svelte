@@ -170,15 +170,8 @@
         font-weight: bold;
     }
 
-    .experience {
-        opacity: 0;
-        animation: appear 2s ease-in forwards;
-    }
-
     .qualification {
         width: 100%;
-        opacity: 0;
-        animation: appear 2.3s ease-in forwards;
     }
 
     .qualification-body {
@@ -228,8 +221,6 @@
 
     .skills {
         width: 100%;
-        opacity: 0;
-        animation: appear 2.5s ease-in forwards;
     }
 
     .skills-body {
@@ -241,16 +232,6 @@
     li {
         margin: 6px 0;
     }
-
-    @keyframes appear {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
-
 
     @media only screen and (max-width: 600px) and (max-height: 670px) {
 
