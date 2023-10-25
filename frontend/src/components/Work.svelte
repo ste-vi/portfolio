@@ -83,8 +83,6 @@
     .content {
         background: rgb(20, 16, 65);
         background: linear-gradient(0deg, rgba(20, 16, 65, 1) 9%, rgba(3, 2, 9, 1) 100%);
-        background-blend-mode: saturation;
-        mix-blend-mode: darken;
         align-items: center;
         height: 100vh;
         width: 100%;

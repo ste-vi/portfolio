@@ -143,10 +143,7 @@
     }
 
     .content {
-        background: rgb(3, 2, 9);
         background: linear-gradient(0deg, rgba(3, 2, 9, 1) 0%, rgba(17, 14, 120, 1) 100%);
-        background-blend-mode: saturation;
-        mix-blend-mode: darken;
         justify-content: center;
         align-items: center;
         height: 100vh;

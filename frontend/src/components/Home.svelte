@@ -580,8 +580,6 @@
         width: 40%;
         background: rgb(49, 60, 139);
         background: linear-gradient(0deg, rgb(101, 106, 190) 0%, rgba(0, 10, 86, 1) 100%);
-        background-blend-mode: saturation;
-        mix-blend-mode: darken;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -617,8 +615,6 @@
     .right {
         height: 100vh;
         width: 60%;
-        background-blend-mode: saturation;
-        mix-blend-mode: darken;
         background: rgb(17, 14, 120);
         background: linear-gradient(0deg, rgba(17, 14, 120, 1) 0%, rgba(3, 2, 9, 1) 70%);
     }
