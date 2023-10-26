@@ -1,11 +1,25 @@
-<script>
-  import { enhance } from "$app/forms";
+<script lang="ts">
+  import { superForm } from "sveltekit-superforms/client";
+  import { Modals, closeModal, openModal } from "svelte-modals";
+  import DefaultModal from "$lib/modals/DefaultModal.svelte";
 
   const gutHubDomain = "https://github.com";
   const gitHubUrl = gutHubDomain + "/stevi-u";
 
   const linkedInDomain = "https://www.linkedin.com/in";
   const linkedInUrl = linkedInDomain + "/vitalii-stefanchak";
+
+  export let emailForm;
+
+  const { form, errors, enhance } = superForm(emailForm, {
+    taintedMessage: null,
+    resetForm: true,
+    onUpdated({ form }) {
+      if (form.valid) {
+        openModal(DefaultModal, { title: "Success", message: "Thank you for sending this email\n I'll reach out to you soon!" });
+      }
+    }
+  });
 
 </script>
 
@@ -158,12 +172,32 @@
       </div>
 
       <div class="email">
-        <div class="header">Send an e-mail</div>
-        <form action="/" method="POST" use:enhance>
-          <input name="name" placeholder="name">
-          <input name="email" placeholder="your email">
-          <input name="subject" placeholder="subject">
-          <textarea name="message" placeholder="message" />
+        <div class="header">Send an email to me</div>
+        <form method="POST" use:enhance>
+          <div class="input-container">
+            <input name="name" placeholder="your name" bind:value={$form.name}>
+            {#if $errors.name}
+              <span class="invalid invalid-name">{$errors.name}</span>
+            {/if}
+          </div>
+          <div class="input-container">
+            <input name="email" placeholder="your email" bind:value={$form.email}>
+            {#if $errors.email}
+              <span class="invalid invalid-email">{$errors.email}</span>
+            {/if}
+          </div>
+          <div class="input-container">
+            <input name="subject" placeholder="subject" bind:value={$form.subject}>
+            {#if $errors.subject}
+              <span class="invalid">{$errors.subject}</span>
+            {/if}
+          </div>
+          <div class="input-container">
+            <textarea name="message" placeholder="message" bind:value={$form.message} />
+            {#if $errors.message}
+              <span class="invalid">{$errors.message}</span>
+            {/if}
+          </div>
           <button type="submit" class="send-btn">submit <i class="fa-regular fa-envelope"></i>
           </button>
         </form>
@@ -220,6 +254,13 @@
 
 </section>
 
+<Modals>
+  <div
+    slot="backdrop"
+    class="backdrop"
+    on:click={closeModal}
+  />
+</Modals>
 
 <style>
     .container {
@@ -252,7 +293,7 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        height: 570px;
+        min-height: 59.6vh;
         width: 32%;
         padding: 2rem 1rem;
         margin-left: 2rem;
@@ -273,11 +314,24 @@
         padding: 1rem;
     }
 
+    .input-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3rem;
+        justify-content: flex-start;
+    }
+
+    .invalid {
+        font-size: 0.8rem;
+        color: rgba(255, 0, 0, 0.7);
+        padding-top: 3px;
+    }
+
     input,
     textarea {
         background: transparent;
         color: white;
-        margin-bottom: 3rem;
         padding: 2px;
         border: transparent;
         border-bottom: white 1px solid;
@@ -286,6 +340,7 @@
     textarea {
         resize: none;
         height: 140px;
+        white-space: pre-wrap;
     }
 
     input:focus,
@@ -296,6 +351,7 @@
     input::placeholder,
     textarea::placeholder {
         color: white;
+        opacity: 0.5;
     }
 
     .send-btn {
@@ -345,12 +401,11 @@
 
     .social:hover {
         background: rgb(90, 87, 238, 0.20);
-        border: 1px solid rgb(90, 87, 238, 0.2);
     }
 
     .social:active {
         background-color: rgb(90, 87, 238, 0.50);
-        border: 2px solid rgb(90, 87, 238, 0.50);
+        border: 1px solid rgb(90, 87, 238, 0.50);
     }
 
     .icon {
@@ -415,7 +470,8 @@
 
         .email {
             width: 45%;
-            height: 570px;
+            min-height: 420px;
+            max-height: 720px;
         }
     }
 
@@ -471,9 +527,13 @@
 
         .email {
             width: 84%;
-            height: 360px;
+            min-height: 420px;
             padding: 1rem 0.6rem;
             margin-left: 0;
+        }
+
+        .input-container {
+            margin-bottom: 1.8rem;
         }
 
         .header {
@@ -481,13 +541,8 @@
             margin-bottom: 0;
         }
 
-        input {
-            margin-bottom: 1.8rem;
-        }
-
         textarea {
             height: 80px;
-            margin-bottom: 1.8rem;
         }
 
         .send-btn {

@@ -1,0 +1,61 @@
+import transporter from '$lib/emails/email.server';
+import { GOOGLE_EMAIL_FROM, GOOGLE_EMAIL_TO } from '$env/static/private';
+import Email from '$lib/emails/Email.svelte';
+import { render } from 'svelte-email';
+import { superValidate } from 'sveltekit-superforms/server';
+import { fail } from '@sveltejs/kit';
+import type { SuperValidated } from 'sveltekit-superforms';
+import { sendEmailFormSchema } from '$lib/schemas';
+import { openModal } from 'svelte-modals';
+import DefaultModal from '$lib/modals/DefaultModal.svelte';
+
+export const load = async () => {
+	const form = await superValidate(sendEmailFormSchema);
+	return {
+		form
+	};
+};
+
+export const actions = {
+	default: async ({ request }) => {
+		const form = await superValidate(request, sendEmailFormSchema);
+
+		if (!form.valid) {
+			return fail(400, {
+				form
+			});
+		}
+
+		const message = getEmailMessage(form);
+
+		await sendEmail(message);
+
+		return { form };
+	}
+};
+
+function getEmailMessage(form: SuperValidated<any>) {
+	const emailHtml = render({
+		template: Email,
+		props: {
+			name: form.data.name,
+			body: form.data.message,
+			email: form.data.email
+		}
+	});
+
+	return {
+		from: GOOGLE_EMAIL_FROM,
+		to: GOOGLE_EMAIL_TO,
+		subject: 'Portfolio | ' + form.data.subject,
+		html: emailHtml
+	};
+}
+
+async function sendEmail(message: any) {
+	transporter.sendMail(message, (err: any) => {
+		if (err) {
+			console.error(err);
+		}
+	});
+}

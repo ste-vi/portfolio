@@ -1,7 +1,5 @@
 <script>
 
-  import Leftnav from "./Leftnav.svelte";
-
   let screenWidth = 0;
   let screenHeight = 0;
 
@@ -87,8 +85,6 @@
 
 <section class="container" id="home">
   <div class="left">
-    <!--    <Leftnav />-->
-
     <div class="profile">
       <div class="image">
         <svg xmlns="http://www.w3.org/2000/svg" width="12rem" height="12rem" viewBox="0 0 248 197" fill="none">

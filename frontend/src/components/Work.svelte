@@ -1,17 +1,6 @@
 <script>
   let projects = [
     {
-      "name": "Physical supply chain (France)",
-      "imageSrc": "/project1.jpg",
-      "stack": ["Java 17", "Spring", "PostgreSQL", "Hibernate", "Docker", "Kubernetes", "GCP", "Redis", "Elastic Search", "Hibernate", "Junit", "Mockito"],
-      "description": "The application is a big platform that helps large and middle-size companies/factories control the quality of products their produce and manage relationships between suppliers and consumers.",
-      "responsibilities": "- Worked closely with the large development team under the Agile (Scrum) methodology to deliver high-quality software.\n" +
-        "- Participated in support activities, investigated and resolved different king of issues.\n" +
-        "- Analyzed and implemented new technical solutions.\n" +
-        "- Wrote clean and fully covered unit and integration tests to ensure the quality of the software.\n" +
-        "- Conducted code reviews and provided constructive feedback to team members."
-    },
-    {
       "name": "Digital supply chain (USA)",
       "imageSrc": "/project2.jpg",
       "stack": ["Java 17", "Spring", "PostgreSQL", "GraphQL", "Kubernetes", "Docker", "Microservices", "AWS", "GitHub Actions", "Junit", "Mockito"],
@@ -22,6 +11,17 @@
         "- Implemented new business requirements by developing new modules.\n" +
         "- Optimized the performance of an application by reducing database hits, adding cache, and constantly monitoring execution time during development.\n" +
         "- Refactored source code which helped in a project's development speed and efficiency.\n"
+    },
+    {
+      "name": "Physical supply chain (France)",
+      "imageSrc": "/project1.jpg",
+      "stack": ["Java 17", "Spring", "PostgreSQL", "Hibernate", "Docker", "Kubernetes", "GCP", "Redis", "Elastic Search", "Hibernate", "Junit", "Mockito"],
+      "description": "The application is a big platform that helps large and middle-size companies/factories control the quality of products their produce and manage relationships between suppliers and consumers.",
+      "responsibilities": "- Worked closely with the large development team under the Agile (Scrum) methodology to deliver high-quality software.\n" +
+        "- Participated in support activities, investigated and resolved different king of issues.\n" +
+        "- Analyzed and implemented new technical solutions.\n" +
+        "- Wrote clean and fully covered unit and integration tests to ensure the quality of the software.\n" +
+        "- Conducted code reviews and provided constructive feedback to team members."
     }
   ];
 
