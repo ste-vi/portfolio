@@ -1,6 +1,6 @@
 <script lang="ts">
   import { superForm } from "sveltekit-superforms/client";
-  import { Modals, closeModal, openModal } from "svelte-modals";
+  import { closeModal, Modals, openModal } from "svelte-modals";
   import DefaultModal from "$lib/modals/DefaultModal.svelte";
 
   const gutHubDomain = "https://github.com";
@@ -20,6 +20,10 @@
       }
     }
   });
+
+  async function downloadCV() {
+    window.open("/api/gets");
+  }
 
 </script>
 
@@ -61,7 +65,7 @@
           </div>
         </div>
 
-        <div class="social download">
+        <div class="social download" on:click={downloadCV}>
           <div>
             download cv <i class="fa-regular fa-circle-down fa-bounce fa-lg"></i>
           </div>
@@ -276,7 +280,7 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        padding-top: 8rem;
+        padding-top: 4rem;
     }
 
     .info {

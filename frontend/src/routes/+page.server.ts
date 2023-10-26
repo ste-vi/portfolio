@@ -6,8 +6,6 @@ import { superValidate } from 'sveltekit-superforms/server';
 import { fail } from '@sveltejs/kit';
 import type { SuperValidated } from 'sveltekit-superforms';
 import { sendEmailFormSchema } from '$lib/schemas';
-import { openModal } from 'svelte-modals';
-import DefaultModal from '$lib/modals/DefaultModal.svelte';
 
 export const load = async () => {
 	const form = await superValidate(sendEmailFormSchema);
