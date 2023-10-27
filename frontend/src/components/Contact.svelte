@@ -268,7 +268,7 @@
 
 <style>
     .container {
-        height: 100vh;
+        min-height: 100vh;
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -501,7 +501,7 @@
 
         .content {
             padding-top: 2rem;
-            height: 100vh;
+            min-height: 102vh;
         }
 
         .info {

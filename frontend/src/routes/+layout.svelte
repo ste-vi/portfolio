@@ -1,6 +1,8 @@
 <script>
   import "../app.css";
   import { onMount } from "svelte";
+  import { dev } from '$app/environment';
+  import { inject } from '@vercel/analytics';
 
   onMount(() => {
     const hash = window.location.hash;
@@ -13,7 +15,8 @@
     }
   });
 
-</script>
+  inject({ mode: dev ? 'development' : 'production' });
 
+</script>
 
 <slot />
