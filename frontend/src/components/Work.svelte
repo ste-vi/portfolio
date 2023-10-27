@@ -199,15 +199,16 @@
     @media only screen and (max-width: 700px) {
         .cards {
             margin-top: 0.5rem;
-            padding-bottom: 1rem;
+            padding-bottom: 2rem;
             justify-content: flex-start;
             width: 98%;
             font-size: 0.1rem;
             gap: 0;
-
+            overflow-y: hidden;
         }
 
         .title {
+            padding-top: 1rem;
         }
 
         .name {
@@ -216,7 +217,7 @@
         }
 
         img {
-            height: 26vh;
+            height: 24vh;
         }
 
         .card {

@@ -501,6 +501,7 @@
 
         .content {
             padding-top: 2rem;
+            height: 110vh;
         }
 
         .info {
@@ -555,6 +556,7 @@
 
         .footer {
             font-size: 0.9rem;
+            margin-bottom: 4rem;
             align-items: center;
         }
     }

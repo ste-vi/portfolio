@@ -88,9 +88,7 @@
             </div>
           </div>
         </div>
-
       </div>
-
     </div>
 
     <div class="skills">
@@ -100,10 +98,10 @@
           <li>Java</li>
           <li>Spring</li>
           <li>Spring Boot</li>
-          <li>Restful webservices</li>
+          <li>REST</li>
           <li>GraphQL</li>
           <li>System Design</li>
-          <li>Microservice architecture</li>
+          <li>Microservice</li>
         </ul>
         <ul>
           <li>SQL</li>
@@ -119,15 +117,12 @@
           <li>Kubernetes</li>
           <li>AWS</li>
           <li>GCP</li>
-          <li>Elastic Search stack</li>
+          <li>Elastic Search</li>
           <li>CI/CI tools</li>
           <li>Agile</li>
         </ul>
       </div>
-
-
     </div>
-
   </div>
 
 </section>
@@ -183,14 +178,16 @@
     }
 
     .info-above {
-        width: 80%;
+        width: 90%;
+        margin-right: 2rem;
         justify-content: space-evenly;
         display: flex;
     }
 
     .info-below {
         display: flex;
-        width: 80%;
+        margin-left: 2rem;
+        width: 88%;
         justify-content: space-evenly;
     }
 
@@ -233,32 +230,65 @@
         margin: 6px 0;
     }
 
-    @media only screen and (max-width: 600px) and (max-height: 670px) {
-
-    }
-
-    @media only screen and (max-width: 915px) and (max-height: 414px) {
-
-
-    }
-
     @media only screen and (max-width: 600px) {
+
+        .info-above {
+            width: 90%;
+            margin-right: 0;
+        }
+
+        .info-below {
+            width: 90%;
+            margin-left: 0;
+        }
+
+        .line {
+            width: 87%;
+        }
 
         .info-item {
             font-size: 0.5rem;
         }
 
         .skills-body {
-            width: 90%;
+            width: 94%;
         }
 
         li {
             font-size: 0.6rem;
         }
+
+        .mb-2 {
+            margin-bottom: 1rem;
+        }
     }
 
-    @media only screen and (min-width: 600px) and (max-width: 850px) and (max-height: 450px) {
+    @media only screen and (min-width: 600px) and (max-width: 1000px) and (max-height: 800px) {
+        .mb-2 {
+            margin-bottom: 0;
+        }
 
+        .mb-1 {
+            margin-bottom: 0.5rem;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            padding-top: 0.5rem;
+        }
+
+        .info-item {
+            font-size: 0.5rem;
+        }
+
+        .experience-description {
+            font-size: 0.8rem;
+        }
+
+        li {
+            font-size: 0.6rem;
+            margin: 2px 0;
+        }
     }
 
     @media only screen and (min-width: 760px) and (max-width: 820px) and (max-height: 1200px) {
