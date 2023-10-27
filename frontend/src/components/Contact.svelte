@@ -501,7 +501,7 @@
 
         .content {
             padding-top: 2rem;
-            height: 110vh;
+            height: 100vh;
         }
 
         .info {
@@ -532,7 +532,7 @@
 
         .email {
             width: 84%;
-            min-height: 420px;
+            min-height: 364px;
             padding: 1rem 0.6rem;
             margin-left: 0;
         }
