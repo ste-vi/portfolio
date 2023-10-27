@@ -35,7 +35,7 @@
 
         <div class="social">
           <div class="icon">
-            <a href="{gitHubUrl}" target="_blank">
+            <a href="{linkedInUrl}" target="_blank">
               <i class="fa-brands fa-linkedin-in fa-beat fa-xl"></i>
             </a>
           </div>
