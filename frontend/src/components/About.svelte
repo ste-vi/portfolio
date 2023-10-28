@@ -47,7 +47,7 @@
             <div class="info-item-text">
               Passed Middle Java Developer<br>Certification at Inventorsoft
               <br>
-              <span class="year">2021</span>
+              <span class="year">2022</span>
             </div>
             <div class="info-vertical-line"></div>
           </div>

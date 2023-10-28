@@ -4,7 +4,7 @@
   import DefaultModal from "$lib/modals/DefaultModal.svelte";
 
   const gutHubDomain = "https://github.com";
-  const gitHubUrl = gutHubDomain + "/stevi-u";
+  const gitHubUrl = gutHubDomain + "/ste-vi";
 
   const linkedInDomain = "https://www.linkedin.com/in";
   const linkedInUrl = linkedInDomain + "/vitalii-stefanchak";
