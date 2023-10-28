@@ -26,7 +26,17 @@ export const actions = {
 
 		const message = getEmailMessage(form);
 
-		await sendEmail(message);
+		await new Promise((resolve, reject) => {
+			transporter.sendMail(message, (err, info) => {
+				if (err) {
+					console.error(err);
+					reject(err);
+				} else {
+					resolve(info);
+				}
+			});
+		});
+
 
 		return { form };
 	}
@@ -48,12 +58,4 @@ function getEmailMessage(form: SuperValidated<any>) {
 		subject: 'Portfolio | ' + form.data.subject,
 		html: emailHtml
 	};
-}
-
-async function sendEmail(message: any) {
-	transporter.sendMail(message, (err: any) => {
-		if (err) {
-			console.error(err);
-		}
-	});
 }
