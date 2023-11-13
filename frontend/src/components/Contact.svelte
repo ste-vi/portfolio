@@ -459,7 +459,7 @@
         text-transform: lowercase;
         margin-top: auto;
         margin-bottom: 2rem;
-        padding-top: 1rem;
+        padding-top: 4rem;
         display: flex;
         flex-direction: row;
         justify-content: center;
