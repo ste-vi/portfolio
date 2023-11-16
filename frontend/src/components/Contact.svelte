@@ -16,13 +16,17 @@
     resetForm: true,
     onUpdated({ form }) {
       if (form.valid) {
-        openModal(DefaultModal, { title: "Success", message: "Thank you for sending this email\n I'll reach out to you soon!" });
+        openModal(DefaultModal, {
+          title: "Success",
+          message: "Thank you for sending this email\n I'll reach out to you soon!"
+        });
       }
     }
   });
 
   async function downloadCV() {
-    window.open("/api/gets");
+    let response = await fetch("/CV_Vitalii_Stefanchak.pdf");
+    window.open(response.url);
   }
 
 </script>
