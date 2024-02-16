@@ -355,9 +355,8 @@
       </div>
       <div class="content">
         <div class="context-item">hello there!</div>
-        <div>I’m passionate <b class="blue">Java</b> Software Engineer with a profound love for crafting digital
-          solutions that make a
-          difference
+        <div>I’m passionate Senior <b class="blue">Java</b> Software Engineer with a profound love for crafting digital
+          solutions that make a difference
         </div>
         <div>welcome to my odyssey</div>
       </div>
@@ -638,7 +637,7 @@
     .content {
         display: flex;
         flex-direction: column;
-        font-size: 1.8rem;
+        font-size: 1.63rem;
         gap: 8vh;
         justify-content: center;
         flex: 6;

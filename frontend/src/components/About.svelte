@@ -21,14 +21,6 @@
         <div class="info-above">
           <div class="info-item">
             <div class="info-item-text">
-              Joined<br>University
-              <br>
-              <span class="year">2017</span>
-            </div>
-            <div class="info-vertical-line"></div>
-          </div>
-          <div class="info-item">
-            <div class="info-item-text">
               Ecommerce<br>project
               <br>
               <span class="year">2020</span>
@@ -48,6 +40,14 @@
               Passed Middle Java Developer<br>Certification at Inventorsoft
               <br>
               <span class="year">2022</span>
+            </div>
+            <div class="info-vertical-line"></div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-text">
+              Passed Senior Java Developer<br>Certification at Inventorsoft
+              <br>
+              <span class="year">2024</span>
             </div>
             <div class="info-vertical-line"></div>
           </div>
@@ -178,15 +178,15 @@
     }
 
     .info-above {
-        width: 90%;
-        margin-right: 2rem;
+        width: 92%;
+        margin-left: 4rem;
         justify-content: space-evenly;
         display: flex;
     }
 
     .info-below {
         display: flex;
-        margin-left: 2rem;
+        margin-right: 4rem;
         width: 88%;
         justify-content: space-evenly;
     }
